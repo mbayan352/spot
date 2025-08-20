@@ -1,0 +1,770 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Modern Form UI</title>
+  <link href="https://fonts.googleapis.com/css?family=Roboto:400,700|Open+Sans:400,700&display=swap" rel="stylesheet">
+  <style>
+    body {
+      min-height: 100vh;
+      margin: 0;
+      padding: 0;
+      font-family: 'Roboto', 'Open Sans', Arial, sans-serif;
+      background: linear-gradient(180deg, #2a1a3d 0%, #5a3f7d 100%);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .container {
+      background: rgba(138, 109, 173, 0.18);
+      border-radius: 1.5rem;
+      box-shadow: 0 8px 32px rgba(44, 47, 114, 0.18);
+      padding: 2.2rem 1.5rem 2.5rem 1.5rem;
+      max-width: 370px;
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      margin: 24px 8px;
+    }
+    .form-title {
+      color: #fff;
+      font-size: 1.4rem;
+      font-weight: 700;
+      margin-bottom: 1.2rem;
+      letter-spacing: 0.5px;
+      text-align: center;
+    }
+    .form-group {
+      width: 100%;
+      margin-bottom: 1.1rem;
+      display: flex;
+      flex-direction: column;
+    }
+    .form-group label {
+      color: #fff;
+      font-size: 1rem;
+      margin-bottom: 0.4rem;
+      font-weight: 500;
+    }
+    .form-group input {
+      background: #8a6dad;
+      color: #fff;
+      border: 1.5px solid #bba6d6;
+      border-radius: 0.8rem;
+      padding: 0.7rem 1rem;
+      font-size: 1rem;
+      outline: none;
+      transition: border 0.18s;
+    }
+    .form-group input:focus {
+      border: 1.5px solid #fff;
+    }
+    .search-btn {
+  width: 100%;
+  margin: 1.2rem 0 0 0;
+  background: linear-gradient(90deg, #ff3b5c 0%, #8f7cfb 100%);
+  color: #fff;
+  border: none;
+  border-radius: 1.2rem;
+  padding: 1rem 0;
+  font-size: 1.18rem;
+  font-weight: 800;
+  letter-spacing: 1px;
+  cursor: pointer;
+  box-shadow: 0 4px 18px #8f7cfb55;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.7rem;
+  transition: background 0.16s, box-shadow 0.16s, transform 0.12s;
+}
+.search-btn:active, .search-btn:focus {
+  background: linear-gradient(90deg, #a18cf7 0%, #ff3b5c 100%);
+  outline: none;
+  transform: scale(0.98);
+    }
+    .search-btn:active, .search-btn:focus {
+      background: #a18cd1;
+      outline: none;
+    }
+    .categories-section {
+      width: 100%;
+      background: #8a6dad;
+      border-radius: 1rem;
+      margin-top: 0.7rem;
+      padding: 1.1rem 0.7rem 1.2rem 0.7rem;
+      box-sizing: border-box;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+    .categories-title {
+      color: #fff;
+      font-size: 1.08rem;
+      font-weight: 600;
+      margin-bottom: 0.8rem;
+      letter-spacing: 0.2px;
+      text-align: center;
+    }
+    .categories-btns {
+      display: flex;
+      width: 100%;
+      gap: 0.7rem;
+      justify-content: center;
+    }
+    .category-btn {
+      flex: 1 1 0;
+      background: #8a6dad;
+      color: #fff;
+      border: none;
+      border-radius: 0.7rem;
+      padding: 0.7rem 0;
+      font-size: 1rem;
+      font-weight: 600;
+      cursor: pointer;
+      transition: background 0.16s, box-shadow 0.16s;
+      box-shadow: 0 2px 8px #2a1a3d22;
+    }
+    .category-btn:active, .category-btn:focus {
+      background: #a18cd1;
+      outline: none;
+    }
+    @media (max-width: 480px) {
+      .container {
+        padding: 1.2rem 2vw 1.5rem 2vw;
+        max-width: 98vw;
+      }
+      .form-title {
+        font-size: 1.1rem;
+      }
+      .categories-section {
+        padding: 0.7rem 0.2rem 0.8rem 0.2rem;
+      }
+    }
+  </style>
+</head>
+<body style="padding-top:40px;">
+  <div style="width:100vw;text-align:center;background:#deb1d6;color:#fff;font-weight:700;padding:8px 0;letter-spacing:1px;font-size:1rem;z-index:1000;position:fixed;top:0;left:0;">TRIAL VERSION</div>
+  <div class="container">
+  <div class="form-title">Ad Setup</div>
+    <form id="ad-setup-form">
+      <div class="form-group">
+        <label for="region">Region</label>
+        <input type="text" id="region" name="region" placeholder="Enter your region">
+      </div>
+
+      <div class="form-group">
+        <label for="city">City</label>
+        <input type="text" id="city" name="city" placeholder="Enter your city">
+      </div>
+      <div class="form-group">
+        <label for="language">Language</label>
+        <input type="text" id="language" name="language" placeholder="Enter your language">
+      </div>
+      <div class="form-group">
+        <label for="views">Views</label>
+        <input type="text" id="views" name="views" placeholder="Enter views">
+      </div>
+      <div class="form-group">
+        <label for="ad-duration">Ad Duration</label>
+        <input type="text" id="ad-duration" name="ad-duration" placeholder="Enter ad duration">
+      </div>
+    </form>
+    <div class="categories-section">
+      <div class="categories-title">Categories</div>
+      <div class="categories-btns">
+        <button class="category-btn" type="button">Gaming</button>
+        <button class="category-btn" type="button">Esports</button>
+        <button class="category-btn" type="button">Reaction</button>
+        <button class="category-btn" type="button">Art</button>
+      </div>
+    </div>
+    <button type="button" class="search-btn" id="search-next">
+      <span>search</span>
+      <svg width="22" height="22" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/><polyline points="13 16 17 20 21 16"/></svg>
+    </button>
+  </div>
+  <!-- SPOT LIVE DASHBOARD SECTION START -->
+<div id="dashboard-section" style="display:none">
+  <header class="spot-header">
+    <div class="logo">
+      <span class="spot">SPOT</span>
+      <span class="live-pill">LIVE</span>
+    </div>
+    <div class="settings" title="Settings">
+      <svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 1 1-2.83 2.83l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-4 0v-.09a1.65 1.65 0 0 0-1-1.51 1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 1 1-2.83-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1 0-4h.09a1.65 1.65 0 0 0 1.51-1 1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 1 1 2.83-2.83l.06.06a1.65 1.65 0 0 0 1.82.33h.09a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 4 0v.09a1.65 1.65 0 0 0 1 1.51h.09a1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 1 1 2.83 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82v.09a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 0 4h-.09a1.65 1.65 0 0 0-1.51 1z"/></svg>
+    </div>
+  </header>
+  <div class="main-title">Made for you</div>
+  <div class="dashboard-grid">
+    <div class="dashboard-card">
+      <div class="live-badge">LIVE</div>
+      <img class="profile-img" src="https://randomuser.me/api/portraits/men/32.jpg" alt="BoDe_Gamer" />
+      <div class="streamer">BoDe_Gamer</div>
+      <div class="viewers">10K viewers</div>
+      <button class="join-btn">Join</button>
+    </div>
+    <div class="dashboard-card">
+      <div class="live-badge">LIVE</div>
+      <img class="profile-img" src="https://randomuser.me/api/portraits/women/44.jpg" alt="owBrain" />
+      <div class="streamer">owBrain</div>
+      <div class="viewers">14K viewers</div>
+      <button class="join-btn">Join</button>
+    </div>
+    <div class="dashboard-card">
+      <div class="live-badge">LIVE</div>
+      <img class="profile-img" src="c:/Users/mbaya/OneDrive/Desktop/صوره البنت .jpeg" alt="ZedPlayz" />
+      <div class="streamer">ZedPlayz</div>
+      <div class="viewers">7.2K viewers</div>
+      <button class="join-btn">Join</button>
+    </div>
+    <div class="dashboard-card">
+      <div class="live-badge">LIVE</div>
+      <img class="profile-img" src="https://randomuser.me/api/portraits/women/68.jpg" alt="ArtQueen" />
+      <div class="streamer">ArtQueen</div>
+      <div class="viewers">5.8K viewers</div>
+      <button class="join-btn">Join</button>
+    </div>
+  </div>
+  <nav class="bottom-nav">
+    <div class="nav-icon" id="nav-home" title="Home">
+      <svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><path d="M3 12l9-9 9 9"/><path d="M9 21V9h6v12"/></svg>
+    </div>
+    <div class="nav-icon" id="nav-search" title="Search">
+      <svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+    </div>
+    <div class="nav-icon live active" id="nav-live" title="Live">
+      <svg width="28" height="28" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><circle cx="12" cy="12" r="7"/><circle cx="12" cy="12" r="3"/></svg>
+    </div>
+    <div class="nav-icon" id="nav-bell" title="Notifications">
+      <svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><path d="M18 8a6 6 0 0 0-12 0c0 7-3 9-3 9h18s-3-2-3-9"/><path d="M13.73 21a2 2 0 0 1-3.46 0"/></svg>
+    </div>
+    <div class="nav-icon" id="nav-profile" title="Profile">
+      <svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><circle cx="12" cy="7" r="4"/><path d="M5.5 21a8.38 8.38 0 0 1 13 0"/></svg>
+    </div>
+  </nav>
+
+</div>
+<!-- SPOT LIVE DASHBOARD SECTION END -->
+
+<!-- CONFIRMATION PAGE START -->
+<div id="confirmation-section" style="display:none; min-height:100vh; align-items:center; justify-content:center; flex-direction:column; background: linear-gradient(180deg, #6D5ACF 0%, #8a6dad 100%); position:fixed; top:0; left:0; width:100vw; z-index:999;">
+  <div style="background:rgba(138,109,173,0.22); border-radius:2rem; box-shadow:0 8px 32px #2c2f7218; padding:2.5rem 2rem; max-width:350px; margin:auto; display:flex; flex-direction:column; align-items:center;">
+    <svg width="64" height="64" viewBox="0 0 64 64" fill="none" style="margin-bottom:1.2rem;"><circle cx="32" cy="32" r="32" fill="#8f7cfb"/><path d="M20 34l8 8 16-16" stroke="#fff" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/></svg>
+    <div style="color:#fff; font-size:1.3rem; font-weight:700; margin-bottom:0.7rem; text-align:center;">Approved!</div>
+    <div style="color:#e0d6f7; font-size:1.05rem; text-align:center; margin-bottom:1.2rem;">The streamer has successfully approved your ad. You will be contacted soon.</div>
+  <button id="back-to-dashboard" style="background:linear-gradient(90deg,#ff3b5c 0%,#8f7cfb 100%);color:#fff;border:none;border-radius:1.2rem;padding:0.9rem 2.2rem;font-size:1.1rem;font-weight:700;cursor:pointer;box-shadow:0 4px 18px #8f7cfb55;">Next</button>
+  </div>
+</div>
+<!-- CONFIRMATION PAGE END -->
+
+<!-- زر الرجوع العام -->
+<div id="global-back-btn" style="position:fixed;top:52px;left:18px;z-index:1200;display:none;">
+  <button style="background:rgba(44,47,114,0.85);border:none;border-radius:50%;width:44px;height:44px;display:flex;align-items:center;justify-content:center;box-shadow:0 2px 8px #2c2f7218;cursor:pointer;">
+    <svg width="26" height="26" fill="none" stroke="#fff" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><polyline points="15 18 9 12 15 6"/></svg>
+  </button>
+</div>
+
+<script>
+  // Dashboard data (example streamers)
+const streamers = [
+  {
+    name: 'BoDe_Gamer',
+    region: 'Middle',
+    city: 'ٌRiyadh',
+    language: 'Arabic',
+    views: '10k',
+    category: 'Gaming',
+    img: 'c:/Users/mbaya/OneDrive/Desktop/صوره bpde.jpeg',
+  },
+  {
+    name: 'owBrain',
+    region: 'Middle East',
+    city: 'Dubai',
+    language: 'Arabic',
+    views: '14K',
+    category: 'Esports',
+    img: 'c:/Users/mbaya/OneDrive/Desktop/صوره كاس.jpeg',
+  },
+  {
+    name: 'itmadv',
+    region: 'Europe',
+    city: 'Berlin',
+    language: 'German',
+    views: '12k',
+    category: 'Reaction',
+    img: 'c:/Users/mbaya/OneDrive/Desktop/صوره البنت .jpeg',
+  },
+  {
+    name: 'W1llyv',
+    region: 'Middle East',
+    city: 'Riyadh',
+    language: 'Arabic',
+    views: '15k',
+    category: 'Art',
+    img: 'c:/Users/mbaya/OneDrive/Desktop/صوره ويلي .jpeg',
+  }
+];
+
+function filterStreamers(formData) {
+  // دائماً أرجع W1llyv بغض النظر عن البيانات المدخلة
+  return streamers.filter(s => s.name.toLowerCase() === 'w1llyv');
+}
+
+function renderDashboard(filtered) {
+  const grid = document.querySelector('#dashboard-section .dashboard-grid');
+  grid.innerHTML = '';
+  if (filtered.length === 0) {
+    grid.innerHTML = '<div style="color:#fff;text-align:center;width:100%;padding:2rem 0;">No streamers found matching your criteria.</div>';
+    return;
+  }
+  filtered.forEach((s, idx) => {
+    grid.innerHTML += `
+      <div class="dashboard-card">
+        <div class="live-badge">LIVE</div>
+        <img class="profile-img" src="${s.img}" alt="${s.name}" />
+        <div class="streamer">${s.name}</div>
+        <div class="viewers">${s.views} viewers</div>
+        <button class="join-btn" data-idx="${idx}" data-name="${s.name}">Join</button>
+      </div>
+    `;
+  });
+  // إعادة تفعيل أزرار الانضمام بعد إعادة بناء الداشبورد
+  document.querySelectorAll('.join-btn').forEach(btn => {
+    btn.addEventListener('click', function() {
+      // حفظ اسم الستريمر المختار في متغير عام
+      window.selectedStreamerName = btn.getAttribute('data-name');
+      document.getElementById('dashboard-section').style.display = 'none';
+      document.getElementById('confirmation-section').style.display = 'flex';
+      document.body.style.background = 'linear-gradient(180deg, #6D5ACF 0%, #8a6dad 100%)';
+    });
+  });
+}
+
+// زر الرجوع العام
+const globalBackBtn = document.getElementById('global-back-btn');
+const backBtnSvg = globalBackBtn.querySelector('button');
+function showBackBtn(callback) {
+  globalBackBtn.style.display = 'block';
+  backBtnSvg.onclick = callback;
+}
+function hideBackBtn() {
+  globalBackBtn.style.display = 'none';
+  backBtnSvg.onclick = null;
+}
+
+// تعديل التنقل بين الصفحات لإظهار زر الرجوع
+const container = document.querySelector('.container');
+const dashboardSection = document.getElementById('dashboard-section');
+const confirmationSection = document.getElementById('confirmation-section');
+
+// عند عرض الداشبورد
+function goToDashboard() {
+  container.style.display = 'none';
+  dashboardSection.style.display = 'block';
+  confirmationSection.style.display = 'none';
+  document.body.style.background = 'linear-gradient(180deg, #2C2F72 0%, #6D5ACF 100%)';
+  showBackBtn(() => {
+    dashboardSection.style.display = 'none';
+    container.style.display = 'flex';
+    hideBackBtn();
+    document.body.style.background = 'linear-gradient(180deg, #2a1a3d 0%, #5f3f7d 100%)';
+  });
+}
+// عند عرض صفحة التأكيد
+function goToConfirmation() {
+  container.style.display = 'none';
+  dashboardSection.style.display = 'none';
+  confirmationSection.style.display = 'flex';
+  document.body.style.background = 'linear-gradient(180deg, #6D5ACF 0%, #8a6dad 100%)';
+  hideBackBtn(); // لا تظهر زر الرجوع في صفحة approved
+}
+// عند عرض صفحة إعلان المنتج النهائي
+function goToFinalAd() {
+  container.style.display = 'none';
+  dashboardSection.style.display = 'none';
+  confirmationSection.innerHTML = `
+    <div style="display:flex;flex-direction:column;align-items:center;justify-content:center;min-height:100vh;">
+      <svg width="70" height="70" viewBox="0 0 24 24" fill="none" stroke="#8f7cfb" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="margin-bottom:18px;"><circle cx="12" cy="12" r="10"/><path d="M8 12l2 2 4-4"/></svg>
+      <div style="color:#fff; font-size:1.3rem; font-weight:700; margin-bottom:0.7rem; text-align:center;">Your product has been advertised!</div>
+    </div>
+  `;
+  confirmationSection.style.display = 'flex';
+  hideBackBtn();
+}
+
+// تحديث الأحداث في الداشبورد وزر Next
+function renderDashboard(filtered) {
+  const grid = document.querySelector('#dashboard-section .dashboard-grid');
+  grid.innerHTML = '';
+  if (filtered.length === 0) {
+    grid.innerHTML = '<div style="color:#fff;text-align:center;width:100%;padding:2rem 0;">No streamers found matching your criteria.</div>';
+    return;
+  }
+  filtered.forEach((s, idx) => {
+    grid.innerHTML += `
+      <div class="dashboard-card">
+        <div class="live-badge">LIVE</div>
+        <img class="profile-img" src="${s.img}" alt="${s.name}" />
+        <div class="streamer">${s.name}</div>
+        <div class="viewers">${s.views} viewers</div>
+        <button class="join-btn" data-idx="${idx}" data-name="${s.name}">Join</button>
+      </div>
+    `;
+  });
+  document.querySelectorAll('.join-btn').forEach(btn => {
+    btn.addEventListener('click', function() {
+      window.selectedStreamerName = btn.getAttribute('data-name');
+      goToConfirmation();
+    });
+  });
+}
+
+// زر Next في صفحة التأكيد
+function updateNextButton() {
+  const nextBtn = document.getElementById('back-to-dashboard');
+  if (nextBtn) {
+    nextBtn.onclick = function() {
+      const selectedStreamer = window.selectedStreamerName;
+      if (selectedStreamer && selectedStreamer.toLowerCase() === 'w1llyv') {
+        goToFinalAd();
+      } else {
+        window.location.href = 'next.html';
+      }
+    };
+  }
+}
+
+// تحديث زر Next عند كل عرض لصفحة التأكيد
+const observer = new MutationObserver(updateNextButton);
+observer.observe(document.getElementById('confirmation-section'), { childList: true, subtree: true });
+
+  const searchBtn = document.getElementById('search-next');
+searchBtn.onclick = function() {
+  const formData = {
+    region: document.getElementById('region').value,
+    city: document.getElementById('city').value,
+    language: document.getElementById('language').value,
+    views: document.getElementById('views').value,
+    adDuration: document.getElementById('ad-duration') ? document.getElementById('ad-duration').value : ''
+  };
+  // إذا لم يتم إدخال أي بيانات
+  if (!formData.region && !formData.city && !formData.language && !formData.views && !formData.adDuration) {
+    document.querySelector('.container').style.display = 'none';
+    document.getElementById('dashboard-section').style.display = 'none';
+    document.body.style.background = 'linear-gradient(180deg, #2C2F72 0%, #6D5ACF 100%)';
+    // عرض رسالة عدم وجود نتائج مع زر رجوع
+    if (!document.getElementById('no-data-section')) {
+      const noDataDiv = document.createElement('div');
+      noDataDiv.id = 'no-data-section';
+      noDataDiv.style.display = 'flex';
+      noDataDiv.style.flexDirection = 'column';
+      noDataDiv.style.alignItems = 'center';
+      noDataDiv.style.justifyContent = 'center';
+      noDataDiv.style.minHeight = '100vh';
+      noDataDiv.innerHTML = `
+        <svg width="80" height="80" viewBox="0 0 24 24" fill="none" stroke="#ff3b5c" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="margin-bottom:18px;"><circle cx="12" cy="12" r="10"/><line x1="8" y1="8" x2="16" y2="16"/><line x1="16" y1="8" x2="8" y2="16"/></svg>
+        <div style="color:#fff; font-size:1.2rem; font-weight:700; margin-bottom:1.1rem; text-align:center;">No results found</div>
+        <button id="back-to-form-btn" style="background:linear-gradient(90deg,#ff3b5c 0%,#8f7cfb 100%);color:#fff;border:none;border-radius:1.2rem;padding:0.9rem 2.2rem;font-size:1.1rem;font-weight:700;cursor:pointer;box-shadow:0 4px 18px #8f7cfb55;display:flex;align-items:center;gap:0.5rem;">
+          <svg width="22" height="22" fill="none" stroke="#fff" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><polyline points="15 18 9 12 15 6"/></svg>
+          Back
+        </button>
+      `;
+      document.body.appendChild(noDataDiv);
+      document.getElementById('back-to-form-btn').onclick = function() {
+        noDataDiv.remove();
+        container.style.display = 'flex';
+        hideBackBtn();
+        document.body.style.background = 'linear-gradient(180deg, #2a1a3d 0%, #5f3f7d 100%)';
+      };
+      showBackBtn(() => {
+        noDataDiv.remove();
+        container.style.display = 'flex';
+        hideBackBtn();
+        document.body.style.background = 'linear-gradient(180deg, #2a1a3d 0%, #5f3f7d 100%)';
+      });
+    }
+    return;
+  }
+  const filtered = filterStreamers(formData);
+  renderDashboard(filtered);
+  goToDashboard();
+};
+  // Card hover/tap effect for mobile
+  document.querySelectorAll('.dashboard-card').forEach(card => {
+    card.addEventListener('touchstart', () => {
+      card.style.transform = 'scale(0.97)';
+      setTimeout(() => card.style.transform = '', 180);
+    });
+  });
+  // Join button tap/hover effect
+  document.querySelectorAll('.join-btn').forEach(btn => {
+    btn.addEventListener('touchstart', () => {
+      btn.style.transform = 'scale(0.93)';
+      setTimeout(() => btn.style.transform = '', 180);
+    });
+  });
+
+  // زر العودة للداشبورد من صفحة التأكيد
+  const backBtn = document.getElementById('back-to-dashboard');
+  if (backBtn) {
+    backBtn.onclick = function() {
+      // التحقق إذا كان الستريمر المختار هو W1llyv
+      const selectedStreamer = window.selectedStreamerName;
+      if (selectedStreamer && selectedStreamer.toLowerCase() === 'w1llyv') {
+        // إظهار صورة الإعلان بدلاً من الانتقال
+        document.getElementById('confirmation-section').innerHTML = `
+          <div style="display:flex;flex-direction:column;align-items:center;justify-content:center;min-height:100vh;">
+            <img src="c:/Users/mbaya/OneDrive/Desktop/صورخ الاعلان .jpeg" alt="اعلان W1لليv" style="max-width:90vw;max-height:80vh;border-radius:1.5rem;box-shadow:0 8px 32px #2c2f7218;" />
+          </div>
+        `;
+      } else {
+        window.location.href = 'next.html';
+      }
+    };
+  }
+  // Bottom nav highlight
+  const navIcons = document.querySelectorAll('.nav-icon');
+  navIcons.forEach(icon => {
+    icon.addEventListener('click', () => {
+      navIcons.forEach(i => i.classList.remove('active'));
+      icon.classList.add('active');
+    });
+  });
+
+  // إضافة زر رجوع يدوي في الصفحة الثانية (dashboard)
+const dashboardBackBtn = document.createElement('div');
+dashboardBackBtn.innerHTML = `<button id="dashboard-back-btn" style="position:fixed;top:52px;left:18px;z-index:1200;background:rgba(44,47,114,0.85);border:none;border-radius:50%;width:44px;height:44px;display:flex;align-items:center;justify-content:center;box-shadow:0 2px 8px #2c2f7218;cursor:pointer;"><svg width="26" height="26" fill="none" stroke="#fff" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><polyline points="15 18 9 12 15 6"/></svg></button>`;
+dashboardSection.appendChild(dashboardBackBtn);
+document.getElementById('dashboard-back-btn').onclick = function() {
+  dashboardSection.style.display = 'none';
+  container.style.display = 'flex';
+  document.body.style.background = 'linear-gradient(180deg, #2a1a3d 0%, #5f3f7d 100%)';
+};
+</script>
+
+<style>
+  .dashboard-bg {
+    background: linear-gradient(180deg, #2C2F72 0%, #6D5ACF 100%);
+    min-height: 100vh;
+    width: 100vw;
+    margin: 0;
+    padding: 0 0 80px 0;
+    font-family: 'Poppins', 'Inter', 'Montserrat', Arial, sans-serif;
+    color: #fff;
+    position: relative;
+    box-sizing: border-box;
+  }
+  .spot-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px 18px 10px 18px;
+    background: transparent;
+  }
+  .logo {
+    display: flex;
+    align-items: center;
+    font-size: 1.5rem;
+    font-weight: 700;
+    letter-spacing: 1px;
+  }
+  .logo .spot {
+    color: #fff;
+    margin-right: 8px;
+  }
+  .logo .live-pill {
+    background: #FF3B5C;
+    color: #fff;
+    border-radius: 999px;
+    padding: 3px 14px 3px 14px;
+    font-size: 1rem;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    margin-left: 2px;
+    box-shadow: 0 2px 8px #ff3b5c33;
+  }
+  .settings {
+    width: 28px;
+    height: 28px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    border-radius: 50%;
+    transition: background 0.15s;
+  }
+  .settings:hover {
+    background: #3b347a;
+  }
+  .main-title {
+    font-size: 1.3rem;
+    font-weight: 700;
+    margin: 0 0 18px 0;
+    padding-left: 22px;
+    letter-spacing: 0.2px;
+    color: #fff;
+  }
+  .dashboard-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 18px;
+    padding: 0 18px 90px 18px;
+    width: 100%;
+    max-width: 900px;
+    margin: 0 auto;
+  }
+  @media (min-width: 600px) {
+    .dashboard-grid {
+      grid-template-columns: repeat(3, 1fr);
+    }
+  }
+  @media (min-width: 900px) {
+    .dashboard-grid {
+      grid-template-columns: repeat(4, 1fr);
+    }
+  }
+  .dashboard-card {
+    background: rgba(44,47,114,0.85);
+    border-radius: 1.5rem;
+    box-shadow: 0 6px 32px rgba(44,47,114,0.18);
+    padding: 22px 14px 18px 14px;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    transition: box-shadow 0.18s, transform 0.18s;
+    cursor: pointer;
+    overflow: visible;
+  }
+  .dashboard-card:hover {
+    box-shadow: 0 12px 40px #6d5acf55;
+    transform: translateY(-6px) scale(1.025);
+  }
+  .live-badge {
+    position: absolute;
+    top: 12px;
+    left: 12px;
+    background: #FF3B5C;
+    color: #fff;
+    font-size: 0.85rem;
+    font-weight: 700;
+    border-radius: 999px;
+    padding: 3px 12px;
+    z-index: 2;
+    box-shadow: 0 2px 8px #ff3b5c33;
+    letter-spacing: 0.5px;
+  }
+  .profile-img {
+    width: 62px;
+    height: 62px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    border: none;
+    background: #3b347a;
+    box-shadow: 0 2px 8px #0002;
+  }
+  .streamer {
+    font-weight: 700;
+    color: #fff;
+    font-size: 1.08rem;
+    margin-top: 6px;
+    margin-bottom: 2px;
+    text-align: center;
+  }
+  .viewers {
+    color: #a1a1aa;
+    font-size: 0.98rem;
+    margin-bottom: 12px;
+    text-align: center;
+  }
+  .join-btn {
+    background: linear-gradient(90deg, #8f7cfb 0%, #6d5acf 100%);
+    color: #fff;
+    border: none;
+    border-radius: 1.2rem;
+    padding: 10px 28px;
+    font-size: 1rem;
+    font-weight: 600;
+    margin-top: 6px;
+    margin-bottom: 8px;
+    cursor: pointer;
+    box-shadow: 0 2px 12px #6d5acf33;
+    transition: background 0.16s, box-shadow 0.16s, transform 0.12s;
+  }
+  .join-btn:hover, .join-btn:focus {
+    background: linear-gradient(90deg, #a18cf7 0%, #8f7cfb 100%);
+    box-shadow: 0 4px 18px #8f7cfb55;
+    outline: none;
+    transform: scale(1.06);
+  }
+  /* Bottom nav */
+  .bottom-nav {
+    position: fixed;
+    left: 0; right: 0; bottom: 0;
+    background: rgba(44,47,114,0.98);
+    box-shadow: 0 -2px 18px #2c2f7244;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    height: 64px;
+    z-index: 100;
+    border-top-left-radius: 18px;
+    border-top-right-radius: 18px;
+  }
+  .nav-icon {
+    width: 28px;
+    height: 28px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+    opacity: 0.85;
+    transition: color 0.16s, filter 0.16s, opacity 0.16s;
+    cursor: pointer;
+    position: relative;
+  }
+  .nav-icon.active {
+    filter: drop-shadow(0 0 16px 4px #8f7cfb44);
+    color: #8f7cfb;
+    opacity: 1;
+  }
+  .nav-icon.live {
+    width: 48px;
+    height: 48px;
+    background: linear-gradient(90deg, #8f7cfb 0%, #6d5acf 100%);
+    border-radius: 50%;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    margin-top: -18px;
+    box-shadow: 0 0 18px 4px #8f7cfb55;
+    border: 3px solid #fff2;
+    color: #fff;
+    font-size: 1.5rem;
+    transition: box-shadow 0.18s, background 0.18s;
+  }
+  .nav-icon.live.active {
+    box-shadow: 0 0 32px 8px #8f7cfb99;
+    background: linear-gradient(90deg, #a18cf7 0%, #8f7cfb 100%);
+    color: #fff;
+  }
+  @media (max-width: 700px) {
+    .main-title { font-size: 1.1rem; padding-left: 12px; }
+    .dashboard-grid { gap: 12px; padding: 0 6px 90px 6px; }
+  }
+  @media (max-width: 480px) {
+    .spot-header { padding: 14px 8px 6px 8px; }
+    .main-title { font-size: 1rem; padding-left: 8px; }
+    .dashboard-grid { grid-template-columns: repeat(2, 1fr); gap: 8px; padding: 0 2px 90px 2px; }
+    .dashboard-card { padding: 16px 6px 12px 6px; }
+  }
+  @media (max-width: 400px) {
+    .main-title { font-size: 0.98rem; }
+    .dashboard-card { padding: 10px 2px 8px 2px; }
+  }
+</style>

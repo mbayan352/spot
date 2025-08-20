@@ -1,0 +1,232 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>SPOT LIVE — Instant Sponsorships</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root{
+      --bg-top: #08123a; /* deep blue */
+      --bg-bottom: #3b1f5b; /* bluish purple */
+      --accent-pink: #ff396b; /* dark pink/red */
+      --accent-light: #b78bff; /* light purple */
+      --cta-grad-1: #7b61ff; /* purple */
+      --cta-grad-2: #2fb5ff; /* light blue */
+      --white: #ffffff;
+    }
+
+    *{box-sizing:border-box}
+    html,body{height:100%}
+    body{
+      margin:0;
+      font-family: 'Poppins', system-ui, Arial, sans-serif;
+      background: linear-gradient(180deg, var(--bg-top) 0%, var(--bg-bottom) 100%);
+      color:var(--white);
+      -webkit-font-smoothing:antialiased;
+      -moz-osx-font-smoothing:grayscale;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      min-height:100vh;
+      padding:24px;
+    }
+
+    .center-wrap{
+      text-align:center;
+      max-width:920px;
+      width:100%;
+      padding:36px;
+    }
+
+    /* Logo row */
+    .branding{
+      display:inline-flex;
+      align-items:center;
+      gap:12px;
+      margin-bottom:18px;
+    }
+
+    .spot{
+      font-weight:700;
+      font-size:38px;
+      letter-spacing:1px;
+      color:var(--white);
+    }
+/* 
+    .rec-icon{
+      width:34px;
+      height:34px;
+      border-radius:50%;
+      background:var(--accent-pink);
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      box-shadow:0 6px 20px rgba(0,0,0,0.25), 0 0 20px rgba(255,57,107,0.12);
+      flex-shrink:0;
+      position:relative;
+    }
+    .rec-icon::before{
+      content:'';
+      position:absolute;
+      border-radius:50%;
+      border:2px solid rgba(255,255,255,0.12);
+      pointer-events:none;
+    }
+    .rec-icon::after{
+      content:'';
+      width:10px;
+      height:10px;
+      background:#fff;
+      border-radius:50%;
+      display:block;
+      position:relative;
+    } */
+
+    .rec-icon.small{
+      width:40px;
+      height:40px;
+      border-radius:50%;
+      background:var(--accent-pink);
+      box-shadow:0 6px 12px rgba(0,0,0,0.18);
+      position:relative;
+      display:inline-block;
+      margin-left:6px; /* space between icons */
+      vertical-align:middle;
+    }
+    .rec-icon.small::before{
+      content:'';
+      position:absolute;
+      inset:-5px;
+      border-radius:50%;
+      border:2px solid rgba(255,57,107,0.95);
+      pointer-events:none;
+    }
+    .rec-icon.small::after{
+      content:'';
+      width:6px;
+      height:6px;
+      border-radius:50%;
+      display:block;
+      position:relative;
+      left:0;right:0;margin:auto;top:0;
+    }
+
+    .pill-live{
+      display:inline-block;
+      padding:8px 12px;
+      border-radius:14px;
+      color:var(--white);
+      font-weight:600;
+      font-size:18px;
+      margin-left:8px;
+      border-top:2px solid #f40000;
+      border-right:2px solid #f40000;
+      border-bottom:2px solid #f40000;
+      border-left:0;
+    }
+
+    /* Description */
+    .desc{
+      margin-top:6px;
+      font-size:20px;
+      font-weight:500;
+      color:rgba(255,255,255,0.95);
+    }
+    .desc .highlight{
+      color:var(--accent-light);
+      font-weight:700;
+    }
+    .subtext{
+      margin-top:10px;
+      font-size:14px;
+      color:rgba(255,255,255,0.85);
+    }
+
+    /* CTA */
+    .cta-wrap{
+      margin-top:32px;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+    }
+
+    .cta{
+      background:linear-gradient(90deg,var(--cta-grad-1),var(--cta-grad-2));
+      color:var(--white);
+      padding:18px 34px;
+      border-radius:999px;
+      font-size:18px;
+      font-weight:700;
+      letter-spacing:1px;
+      border:0;
+      cursor:pointer;
+      display:inline-flex;
+      align-items:center;
+      gap:12px;
+      box-shadow:0 18px 40px rgba(43,37,122,0.28), 0 6px 18px rgba(47,181,255,0.12);
+      transition:transform .18s ease, box-shadow .18s ease, opacity .12s ease;
+    }
+    .cta:hover{transform:translateY(-4px)}
+    .cta:active{transform:translateY(-1px)}
+
+    .arrow{font-weight:800}
+
+    /* small footer */
+    .legal{
+      margin-top:24px;
+      font-size:12px;
+      color:rgba(255,255,255,0.6);
+    }
+
+    /* modal */
+    .modal-backdrop{position:fixed;inset:0;display:none;align-items:center;justify-content:center;background:linear-gradient(0deg, rgba(2,6,23,0.6), rgba(2,6,23,0.6));padding:24px}
+    .modal{background:linear-gradient(180deg, rgba(255,255,255,0.05), rgba(255,255,255,0.03));border-radius:12px;padding:22px;min-width:320px;max-width:420px;color:var(--white);box-shadow:0 30px 80px rgba(3,6,23,0.6)}
+    .modal h4{margin:0 0 8px 0}
+    .modal p{margin:0;color:rgba(255,255,255,0.85)}
+    .modal .actions{margin-top:14px;display:flex;gap:10px;justify-content:flex-end}
+    .btn-ghost{background:transparent;border:1px solid rgba(255,255,255,0.12);padding:8px 12px;border-radius:10px;color:var(--white);cursor:pointer}
+
+    /* Responsive */
+    @media (max-width:520px){
+      .spot{font-size:30px}
+      .desc{font-size:18px}
+      .cta{padding:14px 22px;font-size:16px}
+    }
+
+  </style>
+</head>
+<body>
+  <div class="center-wrap">
+    <div style="display:flex;flex-direction:column;align-items:center;">
+      <div class="branding">
+        <div class="spot">SPOT</div>
+        <div class="rec-icon small" aria-hidden="true"></div>
+
+        <div class="pill-live">LIVE</div>
+      </div>
+
+      <div class="desc">Instant Sponsorships for <span class="highlight">Live Streams</span> !</div>
+      <div class="subtext">Powered by AI</div>
+
+      <div class="cta-wrap">
+        <button class="cta" id="startBtn" aria-label="Start">
+          <span>START</span>
+          <span class="arrow">&gt;&gt;</span>
+        </button>
+      </div>
+
+      <div class="legal">© SPOT • All rights reserved</div>
+    </div>
+  </div>
+
+
+
+  <script>
+    const startBtn = document.getElementById('startBtn');
+    startBtn.addEventListener('click', () => {
+      window.location.href = 'next.html';
+    });
+  </script>
+</body>
+</html>
